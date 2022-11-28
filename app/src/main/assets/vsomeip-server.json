@@ -1,0 +1,137 @@
+{
+  "unicast" : "192.168.2.3",
+  "netmask": "255.255.255.0",
+  "applications" :
+  [
+    {
+      "name" : "Server",
+      "id" : "0x1234"
+    }
+  ],
+  "services" :
+  [
+    {
+      "service" : "0xB046",
+      "instance" : "0x0001",
+      "reliable" : "41571",
+      "events": [
+      {
+        "event": "0x01",
+        "is_field": "false",
+        "is_reliable": "true",
+        "update-cycle": "2000"
+      }
+    ],
+      "eventgroups": [
+        {
+          "eventgroup": "0x01",
+          "events": [
+            "0x01"
+          ]
+        }
+      ]
+    },
+    {
+      "service" : "0xB047",
+      "instance" : "0x0001",
+      "unreliable" : "41572",
+      "events": [
+        {
+          "event": "0x0002",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": "2000"
+        },
+        {
+          "event": "0x8002",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": "2000"
+        }
+      ],
+      "eventgroups": [
+        {
+          "eventgroup": "0x02",
+          "events": [
+            "0x0002","0x8002"
+          ]
+        }
+      ]
+    },
+    {
+      "service" : "0xB048",
+      "instance" : "0x0001",
+      "unreliable" : "41573",
+      "events": [
+        {
+          "event": "0x8003",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": "2000"
+        },
+        {
+          "event": "0x8004",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": "2000"
+        },
+        {
+          "event": "0x8005",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": "2000"
+        },
+        {
+          "event": "0x8006",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": "2000"
+        }
+      ],
+      "eventgroups": [
+        {
+          "eventgroup": "0x03",
+          "events": [
+            "0x8003","0x8004","0x8005","0x8006"
+          ]
+        }
+      ]
+    },
+    {
+      "service" : "0xB049",
+      "instance" : "0x0001",
+      "unreliable" : "41574",
+      "events": [
+        {
+          "event": "0x8007",
+          "is_field": "false",
+          "is_reliable": "false",
+          "update-cycle": "2000"
+        }
+      ],
+      "eventgroups": [
+        {
+          "eventgroup": "0x04",
+          "events": [
+            "0x8007"
+          ]
+        }
+      ]
+    }
+  ],
+  "routing" : "Server",
+  "service-discovery" :
+  {
+    "enable" : "true",
+    "multicast" : "239.127.3.1",
+    "port" : "30490",
+    "protocol" : "udp",
+    "initial_delay_min" : "10",
+    "initial_delay_max" : "100",
+    "repetitions_base_delay" : "200",
+    "repetitions_max" : "3",
+    "ttl" : "3",
+    "cyclic_offer_delay" : "2000",
+    "request_response_delay" : "1500"
+  }
+}
